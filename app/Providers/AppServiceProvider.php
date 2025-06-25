@@ -20,5 +20,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        if (is_dir(base_path('resources/views/vendor'))) {
+            $this->loadViewsFrom(base_path('resources/views/vendor'), 'vendor');
+        }
     }
 }
